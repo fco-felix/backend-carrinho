@@ -1,5 +1,5 @@
 <div class="col-12 mb-4">
-    <h4 class="text-muted">veja as últimas novidades selecionadas para você!</h4>
+    <h4 class="text-muted">Veja as últimas novidades selecionadas para você!</h4>
 </div>
 <div class="col-12 col-sm-6 col-lg-3 mb-3">
     <div class="card p-0 hvr-glow">
