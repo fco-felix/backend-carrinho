@@ -40,6 +40,16 @@ class Paginas extends ControladorCore {
         }
     }
     
+    public function entrar() {
+        if (!empty($_SESSION["erro_autenticacao"])) {
+            $erro_login = $_SESSION["erro_autenticacao"];
+            unset($_SESSION["erro_autenticacao"]);
+            $this->addDadosPagina("erroLogin", $erro_login);
+        }
+        $this->addTituloPagina("Login Usuário");
+        $this->carregarPagina("v_login");
+    }
+
     public function sobre() {
         echo __FUNCTION__;
     }

@@ -50,7 +50,7 @@ class ConfRotas {
                     break;
 
                 } else {
-                    echo "Método não existe";
+                    echo "Método ( $nomeFuncao ) não existe";
                 }
             }
         }

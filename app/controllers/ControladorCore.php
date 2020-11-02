@@ -4,7 +4,7 @@ namespace App\Controllers;
 class ControladorCore {
 
     private $dadosView = array();
-    private $limiteOciosidade = 3600; // segundos
+    private $limiteOciosidade = 60; // tempo em segundos
 
     public function __construct() {
         $this->verificarOciosidade();

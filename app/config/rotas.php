@@ -28,6 +28,13 @@ $rotas["erro404"] = array(
     "funcao" => "erro404"
 );
 
+$rotas["entrar"] = array(
+    "http" => "POST",
+    "rota" => "/entrar",
+    "controller" => "App\\Controllers\\Paginas",
+    "funcao" => "entrar"
+);
+
 $rotas["login"] = array(
     "http" => "POST",
     "rota" => "/login",
@@ -38,6 +45,6 @@ $rotas["login"] = array(
 $rotas["logout"] = array(
     "http" => "POST",
     "rota" => "/logout",
-    "controller" => "App\\Controllers\\Autenticacao",
+    "controller" => "App\\Controllers\\Paginas",
     "funcao" => "sair"
 );
