@@ -9,9 +9,9 @@ $rotas[""] = array(
 
 $rotas["produto"] = array(
     "http" => "GET",
-    "rota" => "/produto",
+    "rota" => "/produtos",
     "controller" => "App\\Controllers\\Paginas",
-    "funcao" => "produto"
+    "funcao" => "produtos"
 );
 
 $rotas["carrinho"] = array(
@@ -29,7 +29,7 @@ $rotas["erro404"] = array(
 );
 
 $rotas["entrar"] = array(
-    "http" => "POST",
+    "http" => "GET",
     "rota" => "/entrar",
     "controller" => "App\\Controllers\\Paginas",
     "funcao" => "entrar"
@@ -39,12 +39,12 @@ $rotas["login"] = array(
     "http" => "POST",
     "rota" => "/login",
     "controller" => "App\\Controllers\\Autenticacao",
-    "funcao" => "entrar"
+    "funcao" => "login"
 );
 
 $rotas["logout"] = array(
     "http" => "POST",
-    "rota" => "/logout",
-    "controller" => "App\\Controllers\\Paginas",
-    "funcao" => "sair"
+    "rota" => "/sair",
+    "controller" => "App\\Controllers\\Autenticacao",
+    "funcao" => "logout"
 );

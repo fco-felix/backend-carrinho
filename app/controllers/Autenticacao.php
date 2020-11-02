@@ -1,38 +1,40 @@
 <?php
 namespace App\Controllers;
 
+use App\Controllers\ControladorCore;
 use App\Models\Usuario;
+use App\Models\BD\UsuarioDao;
 
 class Autenticacao extends ControladorCore {
-
-    public function __construct() {}
-
-    public function entrar() {
-        //var_dump($_POST["nome"]);
     
-        $usuario = new Usuario( 
-            $_POST["nome"],
-            $_POST["senha"]
-        );
+    public function login() {
 
-        if ($usuario->getNome() == "klaus" 
-                && $usuario->getSenha() == "123") {
-
-            // $this->addDadosPagina("tituloPagina", "Área autenticada");
-            //$this->addDadosView("usuario", $usuario);
-            // $this->carregarPagina("area_autenticada");
-
-            // $_SESSION["usuario"] = serialize($usuario);
-            $this->logarUsuario($usuario);
-            header("Location:".BASE_URL);
+        if ($this->estaLogado()) {
+            header("Location:".BASE_URL."\logado");
         } else {
-            $_SESSION["erro_autenticacao"] = "Login incorreto";
-            header("Location:".BASE_URL."/entrar");
+            $nomeUsuario = $_POST["nome"] ?? null;
+            $senha = $_POST["senha"] ?? null;
+
+            if (!empty($nomeUsuario) && !empty($senha)) {
+                $uDAO = new UsuarioDao();
+                $usuario = $uDAO->login($nomeUsuario, $senha);
+
+                if (!empty($usuario)) {
+                    $this->logarUsuario($usuario);
+                    header("Location: ".BASE_URL."\logado");
+                    return;
+                } else {
+                    $_SESSION["erro_autenticacao"] = "Login incorreto";
+                }
+            } else {
+                $_SESSION["erro_autenticacao"] = "Informe todos os dados";
+            }
+            header("Location: ".BASE_URL."/entrar");
         }
     }
 
-    public function sair() {
-        unset($_SESSION["usuario"]);
-        header("Location:".BASE_URL);
+    public function logout() {
+        $this->deslogarUsuario();
+        header("Location:".BASE_URL."\deslogou");
     }
 }

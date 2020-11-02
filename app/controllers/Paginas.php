@@ -14,11 +14,6 @@ class Paginas extends ControladorCore {
         $this->carregarPagina("v_home");
     }
 
-    public function produto() {
-        $this->addTituloPagina("Página Produto");
-        $this->carregarPagina("v_produto");
-    }
-
     public function carrinho() {
         $this->addTituloPagina("Página Carrinho");
         $this->carregarPagina("v_carrinho");
@@ -27,7 +22,6 @@ class Paginas extends ControladorCore {
     public function produtos() {
         if (!$this->estaLogado()) {
             header("Location:".BASE_URL);
-
         } else {
             $this->addTituloPagina("Listar Produtos");
             

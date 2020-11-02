@@ -1,10 +1,16 @@
-<form action="<?=BASE_URL?>/login" method="post">
-    Usuário:
-    <div><input type="text" name="nome"></div>
-    Senha:
-    <div><input type="password" name="senha"></div>
-    <br>
-    <div><button type="submit">Entrar</button></div>
-</form>
+<div class="col-12 py-5 text-center">
+    <form action="<?=BASE_URL."/login"?>" method="POST" class="col-6 mx-auto">
+        
+        <div class="form-group">
+            <input type="text" name="nome" class="form-control my-2" autofocus placeholder="Usuario">
+            <input type="password" name="senha" class="form-control my-2" placeholder="Senha">
+            <input type="submit" value="Entrar" class="btn btn-primary">
+        </div>
 
-<p style="color:#f00"><?=$dadosView["erroLogin"] ?? ""?></p>
+        <span class="text-danger">
+            <?php 
+            echo $_SESSION["erro_autenticacao"] ?? "nulo"?>
+        </span>
+
+    </form>
+</div>

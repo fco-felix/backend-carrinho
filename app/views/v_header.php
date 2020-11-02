@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-sm-7 mt-sm-0 mt-3">
                             <form">
-                                <p class="text-white text-center mb-0"><small>Nossa lojas | Tenha sua loja | Regulamentos | Acessibilidade | Guia de segurança</small></p>
+                                <p class="text-white text-center mb-0"><small>Nossa lojas | Tenha sua loja | Regulamentos | Acessibilidade | Guia de segurança | <a class="text-white" href="<?=BASE_URL."/sair"?>">Sair</a></small></p>
                                 <input class="form-control mr-sm-2" type="search" placeholder="Procure por código, nome, marca..." aria-label="Procure por código, nome, marca...">
                             </form>
                         </div>
