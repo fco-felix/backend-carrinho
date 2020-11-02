@@ -44,7 +44,8 @@ class Paginas extends ControladorCore {
         echo __FUNCTION__;
     }
 
-    public function erro404() {
+    public function erro404($segmento) {
+        $this->addTituloPagina($segmento);
         $this->carregarPagina("erro404");
     }
 }
