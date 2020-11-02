@@ -55,7 +55,7 @@ class ConfRotas {
             }
         }
         if (empty($rotaExiste)) {
-            (new Paginas())->erro404();
+            (new Paginas())->erro404($segmentos);
         }
     }
 }
