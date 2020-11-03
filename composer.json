@@ -7,7 +7,8 @@
             "App\\": "app",
             "App\\Controllers\\": "app/controllers",
             "App\\Models\\": "app/models",
-            "App\\Config\\": "app/config"
+            "App\\Config\\": "app/config",
+            "App\\Models\\BD\\": "app/models/dao"
         }
     }
 }

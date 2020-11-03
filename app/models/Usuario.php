@@ -4,26 +4,25 @@ namespace App\Models;
 class Usuario {
 
     private string $nome;
+    private string $email;
     private string $senha;
 
-    public function __construct($nome, $senha) {
+    public function __construct($nome, $email, $senha) {
         $this->nome = $nome;
+        $this->email = $email;
         $this->senha = $senha;
     }
 
-    
-
-    /**
-     * Get the value of nome
-     */ 
     public function getNome()
     {
         return $this->nome;
     }
 
-    /**
-     * Get the value of senha
-     */ 
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
     public function getSenha()
     {
         return $this->senha;

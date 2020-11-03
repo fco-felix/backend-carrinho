@@ -46,7 +46,7 @@ class ControladorCore {
     }
 
     protected function estaLogado() {
-        return isset($_SESSION['usuario-sistema']) ? true : false;
+        return isset($_SESSION['usuario-sistema']);
     }
 
     private function verificarOciosidade() {
