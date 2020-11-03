@@ -16,6 +16,12 @@ class Paginas extends ControladorCore
 
     public function index()
     {
+        $pDao = new ProdutoDao();
+        $produtos = $pDao->getProdutos();
+        $this->addDadosPagina(
+            "produtos",
+            $produtos
+        );
         $this->addTituloPagina("Página Inicial");
         $this->carregarPagina("v_home");
     }
@@ -24,18 +30,6 @@ class Paginas extends ControladorCore
     {
         $this->addTituloPagina("Página Carrinho");
         $this->carregarPagina("v_carrinho");
-    }
-
-    public function produtos()
-    {
-        $pDao = new ProdutoDao();
-        $produtos = $pDao->getProdutos();
-        $this->addDadosPagina(
-            "produtos",
-            $produtos
-        );
-        $this->addTituloPagina("Listar Produtos");
-        $this->carregarPagina("v_home");
     }
 
     public function entrar()
