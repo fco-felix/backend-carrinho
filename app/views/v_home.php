@@ -1,4 +1,5 @@
 <?php
+
 echo <<<END
         <div class="col-12 mb-4">
             <h4 class="text-muted">Veja as últimas novidades selecionadas para você!</h4>
@@ -21,6 +22,7 @@ foreach ($dadosView["produtos"] as $i => $produto) {
         </div>
     END;
 }
+
 ?>
 
 <div class="col-12 mb-4">
@@ -28,6 +30,7 @@ foreach ($dadosView["produtos"] as $i => $produto) {
 </div>
 
 <!--
+
 <div class="col-12 col-sm-6 col-lg-3 mb-3">
     <div class="card p-0 hvr-glow">
         <img src="<?= BASE_URL . "/assets/img/guitar.jpg" ?>" alt="prod1" class="card-img-top" widht="50px">

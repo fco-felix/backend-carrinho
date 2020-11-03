@@ -27,6 +27,7 @@ class ProdutoDao extends Dao
 
       if (!empty($resultado)) {
         return $resultado;
+
       }
     } catch (Exception $e) {
       echo $e->getMessage();
