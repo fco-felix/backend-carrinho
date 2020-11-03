@@ -8,8 +8,7 @@
         </div>
 
         <span class="text-danger">
-            <?php
-            echo $_SESSION["erro_autenticacao"] ?? "" ?>
+            <?$dadosView["erroLogin"] ?? "" ?>
         </span>
 
     </form>

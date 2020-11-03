@@ -17,15 +17,16 @@ class ProdutoDao extends Dao
   public function getProdutos()
   {
     try {
-      $sql = "SELECT * FROM tb_produto";
+      //$sql = "SELECT * FROM tb_produto";
 
-      $req = $this->pdo->prepare($sql);
+      //$req = $this->pdo->prepare($sql);
+      $req = $this->pdo->prepare("SELECT codigo, descricao, preco, foto FROM tb_produto");
       $req->execute();
 
-      $resultado = $req->fetch(PDO::FETCH_ASSOC);
+      $resultado = $req->fetchAll(PDO::FETCH_CLASS, "App\Models\Produto");
 
       if (!empty($resultado)) {
-        return new Produto($resultado["codigo"], $resultado["descricao"], $resultado["preco"]);
+        return $resultado;
       }
     } catch (Exception $e) {
       echo $e->getMessage();

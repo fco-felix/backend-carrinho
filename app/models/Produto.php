@@ -1,18 +1,22 @@
 <?php
+
 namespace App\Models;
 
-class Produto {
-
+class Produto
+{
     private string $codigo;
     private string $descricao;
     private float $preco;
-    private $imagem;
+    private $foto;
 
-    public function __construct($codigo, $descricao, $preco) {
+    //Comentado para que o fetch do ProdutoDao consiga chamar o construtor padrão e setar os valores
+    /*function __construct($codigo, $descricao, $preco, $foto)
+    {
         $this->codigo = $codigo;
         $this->descricao = $descricao;
         $this->preco = $preco;
-    }
+        $this->foto = $foto;
+    }*/
 
     public function getCodigo()
     {
@@ -33,5 +37,9 @@ class Produto {
     {
         return $this->imagem;
     }
-    
+
+    public function getFoto()
+    {
+        return $this->foto;
+    }
 }
