@@ -8,8 +8,7 @@
         </div>
 
         <span class="text-danger">
-            <?=$dadosView["erro_autenticacao"] ?? ""?>
+            <?$dadosView["erroLogin"] ?? "" ?>
         </span>
-
     </form>
 </div>

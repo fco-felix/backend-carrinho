@@ -1,11 +1,35 @@
 <?php
-var_dump($dadosView["produtos"]);
+
+echo <<<END
+        <div class="col-12 mb-4">
+            <h4 class="text-muted">Veja as últimas novidades selecionadas para você!</h4>
+        </div>
+END;
+foreach ($dadosView["produtos"] as $i => $produto) {
+    $descricao = $produto->getDescricao();
+    $preco = $produto->getPreco();
+    echo <<<END
+        <div class="col-12 col-sm-6 col-lg-3 mb-3"><div class="card p-0 hvr-glow">
+            <img src="" alt="prod1" class="card-img-top" widht="50px">
+                <div class="card-body">
+                    <p class="card-text">$descricao</p>
+                    <small>por</small>
+                    <h5 class="card-title mb-0">R$ $preco</h5>
+                    <small>ou 12x de R$ $preco com muito juros</small>
+                    <p class="mt-3 float-right"><a href="#" class="btn btn-sm btn-primary">Já quero!</a></p>
+                </div>
+            </div>
+        </div>
+    END;
+}
+
 ?>
 
 <div class="col-12 mb-4">
     <h4 class="text-muted">Veja as últimas novidades selecionadas para você!</h4>
 </div>
 
+<!--
 
 <div class="col-12 col-sm-6 col-lg-3 mb-3">
     <div class="card p-0 hvr-glow">
@@ -36,3 +60,4 @@ var_dump($dadosView["produtos"]);
         </div>
     </div>
 </div>
+-->
