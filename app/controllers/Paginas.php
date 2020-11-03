@@ -26,6 +26,13 @@ class Paginas extends ControladorCore
         $this->carregarPagina("v_home");
     }
 
+    public function produto($codigo)
+    {
+        var_dump($codigo);
+        $this->addTituloPagina("Página de produto");
+        $this->carregarPagina("v_produto");
+    }
+
     public function carrinho()
     {
         $this->addTituloPagina("Página Carrinho");

@@ -9,9 +9,9 @@ $rotas[""] = array(
 
 $rotas["produto"] = array(
     "http" => "GET",
-    "rota" => "/produtos",
+    "rota" => "/produto",
     "controller" => "App\\Controllers\\Paginas",
-    "funcao" => "produtos"
+    "funcao" => "produto"
 );
 
 $rotas["carrinho"] = array(

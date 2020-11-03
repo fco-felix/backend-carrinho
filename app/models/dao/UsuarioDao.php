@@ -1,16 +1,21 @@
 <?php
+
 namespace App\Models\BD;
 
 use App\Models\Usuario;
+use Exception;
 use PDO;
 
-class UsuarioDao extends Dao {
+class UsuarioDao extends Dao
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function login($nome, $senha) {
+    public function login($nome, $senha)
+    {
         try {
             $sql = "SELECT * FROM tb_usuario WHERE nome = ? AND senha = ?";
 
@@ -22,11 +27,10 @@ class UsuarioDao extends Dao {
             if (!empty($resultado)) {
                 return new Usuario($resultado["nome"], $resultado["email"], $resultado["senha"]);
             }
-
         } catch (Exception $e) {
             echo $e->getMessage();
         }
-        
+
         return null;
     }
 }
