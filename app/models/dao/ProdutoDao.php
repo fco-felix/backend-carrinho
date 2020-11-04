@@ -34,4 +34,25 @@ class ProdutoDao extends Dao
 
     return null;
   }
+
+  public function getProduto($codigo)
+  {
+    try {
+        $sql = "SELECT * FROM tb_produto WHERE codigo = ?";
+
+        $req = $this->pdo->prepare($sql);
+        $req->execute([$codigo]);
+
+        $resultado = $req->fetchAll(PDO::FETCH_CLASS);
+
+        if (!empty($resultado)) {
+            return $resultado;
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
+    return null;
+  }
+
 }

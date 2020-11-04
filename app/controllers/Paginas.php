@@ -28,8 +28,13 @@ class Paginas extends ControladorCore
 
     public function produto($codigo)
     {
-        var_dump($codigo);
-        $this->addTituloPagina("Página de produto");
+        $pDao = new ProdutoDao();
+        $produto = $pDao->getProduto($codigo);
+
+        $this->addTituloPagina("Página Produto");
+        $this->addDadosPagina("codigo", $produto->getCodigo());
+        $this->addDadosPagina("descricao", $produto->getDescricao());
+        $this->addDadosPagina("preco", $produto->getPreco());
         $this->carregarPagina("v_produto");
     }
 
