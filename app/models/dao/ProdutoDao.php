@@ -43,7 +43,7 @@ class ProdutoDao extends Dao
         $req = $this->pdo->prepare($sql);
         $req->execute([$codigo]);
 
-        $resultado = $req->fetchAll(PDO::FETCH_CLASS);
+        $resultado = $req->fetch(PDO::FETCH_ASSOC);
 
         if (!empty($resultado)) {
             return $resultado;

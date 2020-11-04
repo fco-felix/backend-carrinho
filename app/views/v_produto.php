@@ -7,7 +7,7 @@
     </nav>
 </section>
 <section class="col-12">
-    <h3>Sumidouro de palheta Marca X 1889 EXCLUSIVO! Só tem esse, compre logo que vai acabar!</h3>
+    <h3><?=$dadosView["descricao"]?>! Só tem esse, compre logo que vai acabar!</h3>
     <div class="row">
         <div class="col-sm-8">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <p class="card-text">Vendido e entregue por <small><strong class="text-primary">MEU E-COMMERCE</strong></p></small>
                     <small>de R$ 15.999,99</small>
-                    <h5 class="card-title"><small>por</small> R$ 849,99 <small>à vista <span class="text-success">(500% de desconto)</span></small></h5>
+                    <h5 class="card-title"><small>por </small><?=$dadosView["preco"]?><small> à vista <span class="text-success">(500% de desconto)</span></small></h5>
                     <small>ou 12x de R$ 119,00 com muito juros</small>
                     
                     <p class="mt-3 mb-0"><a href="#">Mais formas de pagamento</a></p>
