@@ -48,11 +48,10 @@ class Paginas extends ControladorCore
     {
         $pDao = new ProdutoDao();
         $produto = $pDao->getProduto($codigo);
-
-// adicionar o item ao array do carrinho...
-echo $produto["codigo"];
-echo $produto["descricao"];
-echo $produto["preco"];
+        if (!isset($_SESSION['produtos_carrinho'])) {
+            $_SESSION['produtos_carrinho'] = array();
+        }
+        array_push($_SESSION['produtos_carrinho'],$produto);
 
         if (isset($_SESSION["itens_carrinho"])) {
             $_SESSION["itens_carrinho"] += +1;
