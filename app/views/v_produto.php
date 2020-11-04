@@ -38,7 +38,7 @@
                     <small>ou 12x de R$ 119,00 com muito juros</small>
                     
                     <p class="mt-3 mb-0"><a href="#">Mais formas de pagamento</a></p>
-                    <p class="mt-3 mb-0 text-center"><a href="<?=BASE_URL."/carrinho"?>" class="btn-block btn btn-success">Adicionar ao carrinho</a></p>
+                    <p class="mt-3 mb-0 text-center"><a href="<?=BASE_URL."/addcarrinho"?>" class="btn-block btn btn-success">Adicionar ao carrinho</a></p>
                     <p class="mt-3 mb-0"><a href="#">Consultar prazo e valor do frete</a></p>
                 </div>
             </div>

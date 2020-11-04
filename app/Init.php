@@ -83,6 +83,7 @@ class Init
                     $codigo = $segmentos["1"];
                     $funcao = $rota["funcao"];
                     $controller->$funcao($codigo);
+                    $controllerExiste = true;
                     break;
                 }
             }
