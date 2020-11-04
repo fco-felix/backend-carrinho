@@ -40,6 +40,13 @@ class Paginas extends ControladorCore
 
     public function carrinho()
     {
+        $valorTotal = 0;
+        if (isset($_SESSION['produtos_carrinho'])) {
+            foreach ($_SESSION['produtos_carrinho'] as $produto) {
+                $valorTotal += $produto["preco"];
+            }
+        }
+        $this->addDadosPagina("valor_total_carrinho", $valorTotal);
         $this->addTituloPagina("Página Carrinho");
         $this->carregarPagina("v_carrinho");
     }
@@ -51,7 +58,7 @@ class Paginas extends ControladorCore
         if (!isset($_SESSION['produtos_carrinho'])) {
             $_SESSION['produtos_carrinho'] = array();
         }
-        array_push($_SESSION['produtos_carrinho'],$produto);
+        array_push($_SESSION['produtos_carrinho'], $produto);
 
         if (isset($_SESSION["itens_carrinho"])) {
             $_SESSION["itens_carrinho"] += +1;
