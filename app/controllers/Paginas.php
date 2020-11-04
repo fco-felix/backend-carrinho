@@ -40,9 +40,14 @@ class Paginas extends ControladorCore
 
     public function carrinho()
     {
-//        $_SESSION["itens_carrinho"] = $_SESSION["itens_carrinho"] +1 ?? 1;
         $this->addTituloPagina("Página Carrinho");
         $this->carregarPagina("v_carrinho");
+    }
+
+    public function addcarrinho()
+    {
+        $_SESSION["itens_carrinho"] = $_SESSION["itens_carrinho"] +1 ?? 1;
+        $this->carrinho();
     }
 
     public function entrar()

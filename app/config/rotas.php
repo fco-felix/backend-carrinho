@@ -23,7 +23,7 @@ $rotas["carrinho"] = array(
 
 $rotas["addcarrinho"] = array(
     "http" => "GET",
-    "rota" => "/carrinho",
+    "rota" => "/addcarrinho",
     "controller" => "App\\Controllers\\Paginas",
     "funcao" => "addcarrinho"
 );
