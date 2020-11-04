@@ -6,13 +6,14 @@ echo <<<END
         </div>
 END;
 foreach ($dadosView["produtos"] as $i => $produto) {
+    $codigo = $produto->getCodigo();
     $descricao = $produto->getDescricao();
     $preco = $produto->getPreco();
     $rotaProduto = BASE_URL . "/produto/" . $produto->getCodigo();
-
+    $imagem = BASE_URL."/assets/img/".$codigo.".jpg";
     echo <<<END
         <div class="col-12 col-sm-6 col-lg-3 mb-3"><div class="card p-0 hvr-glow">
-            <img src="" alt="prod1" class="card-img-top" widht="50px">
+            <img src="$imagem" alt="prod1" class="card-img-top" widht="50px">
                 <div class="card-body">
                     <p class="card-text">$descricao</p>
                     <small>por</small>
