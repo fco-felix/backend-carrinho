@@ -76,8 +76,8 @@ class Init
             }
             $segmentos = explode("/", $url);
             $r = $segmentos["0"];
-            if ($r == "produto" && $rota["rota"] == "/$r") {
-                $nameClass = $rota["controller"];
+            if (($r == "produto" || $r == "addcarrinho") && $rota["rota"] == "/$r") {
+                    $nameClass = $rota["controller"];
                 $controller = new $nameClass;
                 if (method_exists($controller, $rota["funcao"])) {
                     $codigo = $segmentos["1"];
