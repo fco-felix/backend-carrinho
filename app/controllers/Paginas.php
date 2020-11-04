@@ -44,12 +44,13 @@ class Paginas extends ControladorCore
         $this->carregarPagina("v_carrinho");
     }
 
-    public function addcarrinho()
+    public function addcarrinho($codigo)
     {
-/*
         $pDao = new ProdutoDao();
         $produto = $pDao->getProduto($codigo);
-*/
+
+// adicionar o item ao array do carrinho...
+
         if (isset($_SESSION["itens_carrinho"])) {
             $_SESSION["itens_carrinho"] += +1;
         } else {
