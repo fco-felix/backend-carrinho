@@ -34,7 +34,7 @@
                             <a href="#">
                             <a href="<?=BASE_URL."/carrinho"?>"><img src="<?=BASE_URL."/assets/img/shopping-cart.svg"?>" alt="Carrinho" width="50px"></a>
                                 <p class="p-0 m-0"><span class="badge badge-pill badge-success">
-                                <?=$dadosView["itens_carrinho"] ?? "0"?></span></p>
+                                <?=$_SESSION["itens_carrinho"] ?? "0"?></span></p>
                             </a>
                         </div>
                         <div class="col-12">
